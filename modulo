@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+void calcularModulo (int parametro)
+    {
+    double resultadoModulo;
+    if (parametro<0)
+        {
+          resultadoModulo=parametro*(-1);  
+        }
+    else
+        {
+         resultadoModulo=parametro;
+        }
+    cout<<"el modulo del valor ingresado es : "<< resultadoModulo << "."<<endl;
+    }
+int main()
+{
+    double valor;
+    cout << "ingrese un valor" << endl;
+    cin>>valor;
+    calcularModulo (valor);
+    return 0;
+}
