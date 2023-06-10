@@ -1,0 +1,26 @@
+/*Confeccione una funcicion que reciba un numero entero n y devuelva el factorial de dicho
+numero*/
+
+#include <iostream>
+
+using namespace std;
+
+    int conversionFactorial (int parametro) 
+    {
+        int resultadoFactorial=1 ;
+        for (int i=1 ; i<=parametro ; i++)
+        {
+            resultadoFactorial*=i ;
+        }
+    return resultadoFactorial;
+    }
+     
+    int main ()
+    {
+        int ingresoValor, resultadoFactorial;
+        cout << "ingrese un valor para calcular su factorial" << endl;
+        cin >> ingresoValor;
+        resultadoFactorial = conversionFactorial (ingresoValor);
+        cout<<"el factorial de "<< ingresoValor <<" ( "<<ingresoValor<<"!) es "<< resultadoFactorial <<endl;
+        return 0;
+}
