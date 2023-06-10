@@ -1,0 +1,31 @@
+/*4) Elabore un procedimiento que reciba tres parámetros, n1, n2 y mayor. A través del
+parámetro “mayor” devuelva el mayor número entre n1 y n2.*/
+
+#include <iostream>
+
+using namespace std;
+
+    int conocerElMayor (int n1, int n2) 
+    {
+        int mayor;
+        if (n1>n2)
+        {
+            mayor=n1;
+        }
+        else 
+        {
+            mayor=n2;
+        }
+        return mayor;
+    }
+     
+    int main ()
+    {
+        int primerNumero, segundoNumero,mayorNumero;
+        cout<<"se le pedirán dos numeros para calcular el mayor de ellos"<<endl;
+        cout<<"ingrese los numeros, por favor"<<endl;
+        cin>>primerNumero; 
+        cin>>segundoNumero;
+        cout<<"el mayor entre "<<primerNumero<<" y "<<segundoNumero<<" es "<<conocerElMayor(primerNumero, segundoNumero)<<endl;
+        return 0;
+    }
