@@ -1,0 +1,93 @@
+/*6) Realice un programa que lea dos números enteros n1 y n2 y luego muestre un menú con las
+opciones:
+a – Sumar los números
+b – Restar los números
+c – Multiplicarlos
+d – Realizar la división n1/n2
+Esc - Salir*/
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+    void menu ()
+    {
+        cout<<"a – Sumar los números \nb – Restar los números \nc – Multiplicarlos \nd – Realizar la división n1/n2 \ne-Esc - Salir*/ "<<endl;
+    }
+    
+    int suma(int n1,int n2)
+    {
+        return n1+n2;
+    }
+    int resta(int n1,int n2)
+    {
+        return n1-n2;
+    }
+    int multiplicar(int n1,int n2)
+    {
+        return n1*n2;
+    }
+     int division(int n1,int n2)
+    {
+        return n1/n2;
+    }
+    
+    int eleccion (char opcion,int n1,int n2)
+    {
+        int resultado;
+        switch (opcion)
+        {
+            case 'a':
+            resultado= suma(n1,n2);
+            break;
+            case 'b':
+            resultado= resta(n1,n2);
+            break ;
+            case 'c':
+            resultado= multiplicar(n1,n2);
+            break;
+            case 'd':
+            resultado= division(n1,n2);
+            break;
+            default :
+            cout<<"ERROR!!!!TAS EQUIVOCADO BRO"<<endl;
+        }
+        return resultado;
+    }
+    int repeticion (char opcion) 
+    {
+        int n1, n2;
+        char volver [2];
+        cout<<"elija dos numeros"<<endl;
+        cin>>n1;
+        cin>>n2;
+        cout<<"el resultado de operacion elegida es "<<eleccion(opcion, n1, n2)<<endl;
+        cout<<"¿quiere volver al menu? presione ok";
+        cin>>volver;
+        cout<<"elija la operacion que quiere realizar"<<endl;
+        menu ();
+        cin>>opcion;
+        return opcion; 
+    }
+    int main ()
+    {
+        int n1, n2; 
+        char opcion ;
+        cout<<"elija la operacion que quiere realizar"<<endl;
+        menu ();
+        cin>>opcion; 
+        while (opcion != 'e' || opcion != 'E')
+        {
+            while ((opcion != 'a') && (opcion != 'b') && (opcion != 'c') && (opcion != 'd'))
+            {
+                cout << "Ingresaste una opcion incorrecta, ingrese una acorde a las operaciones";
+                cin >> opcion;
+            }
+    
+            repeticion(opcion);
+            menu ();
+        
+            cout<<"elija la operacion que quiere realizar"<<endl;
+            cin>>opcion;
+        }
+        return 0;
+    }
