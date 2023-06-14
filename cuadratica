@@ -1,0 +1,40 @@
+/*5) Realice una función que reciba los coeficientes de un polinomio de grado 2 y devuelva las
+raíces del mismo siempre y cuando sean raíces reales.*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+    void contarRaices(int a, int b,int c)
+    {
+        int x1,x2,cantRaices;
+        cantRaices= (sqrt(pow(b,2)-4*a*c));
+        if (cantRaices==0)
+        {
+            x1=(-b+sqrt(pow(b,2)-4*a*c))/(2*a);
+            cout<<"existe solo una raiz real: "<<x1<<endl;
+            
+        }
+        else if (cantRaices< 0)
+        {
+            cout<<"no hay raices reales"<<endl;
+        }
+        else if (cantRaices> 0)
+        {
+            x1=(-b+sqrt(pow(b,2)-4*a*c))/(2*a);
+            x2=(-b-sqrt(pow(b,2)-4*a*c))/(2*a);
+            cout<<"existen dos raices reales: "<<x1<<" y "<<x2<<endl;
+        }
+    }
+    
+    int main ()
+    {
+        int coeficiente1, coeficiente2, coeficiente3;
+        cout<<"ingrese los coeficientes que permitiran formar una ecuación cuadratica.EJEMPLO: 2x2+3x+2"<<endl;
+        cin>>coeficiente1;
+        cin>>coeficiente2;
+        cin>>coeficiente3;
+        cout<<"su funcion es:("<<coeficiente1<<")x^2("<<coeficiente2<<")x("<<coeficiente3<<")"<<endl;
+        contarRaices(coeficiente1,coeficiente2,coeficiente3);
+        return 0;
+    }
